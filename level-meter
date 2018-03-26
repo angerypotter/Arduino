@@ -16,7 +16,16 @@ void setup() {
 void loop() {
   sensorValue = analogRead(sensorPin);
   Serial.println(sensorValue);
-  if (sensorValue > 0 && sensorValue < 250) digitalWrite(5, HIGH);
-  if (sensorValue > 255.75 && sensorValue < 550) digitalWrite(6, HIGH);
-  if (sensorValue > 511.5 && sensorValue < 750) digitalWrite(9, HIGH);   
+  if (sensorValue > 50 && sensorValue < 250) 
+  digitalWrite(5, HIGH);
+  digitalWrite(6, LOW);
+  digitalWrite(9, LOW);
+  if (sensorValue > 255 && sensorValue < 550) 
+  digitalWrite(6, HIGH);
+  digitalWrite(5, HIGH);
+  digitalWrite(9, LOW);
+  if (sensorValue > 550 && sensorValue < 750) 
+  digitalWrite(9, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(5, HIGH);   
 }
